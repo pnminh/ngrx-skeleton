@@ -5,3 +5,10 @@
 ```
 npm install @ngrx/schematics --save-dev
 ```
+3. Install all ngrx packages
+```
+npm install @ngrx/store @ngrx/effects @ngrx/store-devtools @ngrx/router-store --save
+```
+* @ngrx/store: core library for states,actions, reducers, and stores
+* @ngrx/store-devtools: Instrumentation with the Chrome / Firefox Extension, goes along with Redux Devtools Extension
+* @ngrx/router-store: Bindings to connect the Angular Router with @ngrx/store
