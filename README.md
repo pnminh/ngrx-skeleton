@@ -24,3 +24,8 @@ ng config cli.defaultCollection @ngrx/schematics
 “defaultCollection”: “@ngrx/schematics”
 }
 ```
+5. Generate the initial state management and register it within the app.module.ts
+```
+ng generate store State --root --module app.module.ts
+```
+*Note:replace store with @ngrx/schematics:store if @ngrx/schematics is not set as default collection*
