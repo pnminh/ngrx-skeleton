@@ -35,3 +35,4 @@ Generate an Admin feature state within the admin folder and register it with the
 ng generate module admin --flat false
 ng generate store admin/Admin -m admin.module.ts
 ```
+* --statePath: path to keep state files, including reducers and states
