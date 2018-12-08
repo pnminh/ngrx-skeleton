@@ -36,3 +36,10 @@ ng generate module admin --flat false
 ng generate store admin/Admin -m admin.module.ts
 ```
 * --statePath: path to keep state files, including reducers and states
+
+6. Generate effect:
+```
+ng generate effect store/App --group --root --module app.module
+```
+* store/App: the App effect that belongs to the store folder
+* --group: add all effects to *store/effects* folder, as opposed to adding to *store* if no flag
