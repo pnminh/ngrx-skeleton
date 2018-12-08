@@ -43,3 +43,10 @@ ng generate effect store/App --group --root --module app.module
 ```
 * store/App: the App effect that belongs to the store folder
 * --group: add all effects to *store/effects* folder, as opposed to adding to *store* if no flag
+
+7. Generate action:
+```
+ng generate action store/Auth --group
+```
+* store/Auth: the Auth action that belongs to the store folder
+* --group: add all actions to *store/actions* folder, as opposed to adding to *store* if no flag
