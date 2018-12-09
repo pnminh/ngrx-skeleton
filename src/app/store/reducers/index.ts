@@ -20,7 +20,7 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
   ? []
   : [];
 // the featureName must match the State name above
-const authFeatureSelector = createFeatureSelector<fromAuth.State>(fromAuth.stateSelector);
+export const authFeatureSelector = createFeatureSelector<fromAuth.State>(fromAuth.stateSelector);
 export const getName = createSelector(
   authFeatureSelector,
   fromAuth.getName

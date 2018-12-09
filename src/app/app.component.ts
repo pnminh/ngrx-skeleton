@@ -12,9 +12,11 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   name$: Observable<string>;
+  authState$: Observable<authReducer.State>;
   ngOnInit(): void {
     this.store.dispatch(new authActions.LoadAuths());
     this.name$ = this.store.select(fromRoot.getName);
+    this.authState$ = this.store.select(fromRoot.authFeatureSelector);
   }
   constructor(private store: Store<fromRoot.State>) {}
 }
