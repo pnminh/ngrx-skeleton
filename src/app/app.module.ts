@@ -24,7 +24,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
-    StarshipsModule
+    // do not import feature module here if lazy loading
+    /* StarshipsModule */
   ],
   providers: [],
   bootstrap: [AppComponent]

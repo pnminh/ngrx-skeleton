@@ -1,16 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { ShipListComponent } from 'src/app/starships/ship-list/ship-list.component';
+import { RouterModule, Routes } from '@angular/router';
 import { WelcomeComponent } from 'src/app/welcome/welcome.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  {
-    path: 'ships',
-    component: ShipListComponent
-  }
+  { path: 'ships', loadChildren: './starships/starships.module#StarshipsModule' },
 ];
 @NgModule({
   declarations: [],
