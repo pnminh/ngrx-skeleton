@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import * as fromShips from './reducers/ships.reducer';
+import * as fromShips from './store/reducers/ships.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { ShipsEffects } from './effects/ships.effects';
+import { ShipsEffects } from './store/effects/ships.effects';
+import { ShipListComponent } from './ship-list/ship-list.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ShipListComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature('ships', fromShips.reducer),
     EffectsModule.forFeature([ShipsEffects])
-  ]
+  ],
+  exports: [ShipListComponent]
 })
-export class StarshipsModule { }
+export class StarshipsModule {}
