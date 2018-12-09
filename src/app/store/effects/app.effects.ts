@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
@@ -9,7 +8,7 @@ import * as authAction from '../actions/auth.actions';
 
 @Injectable()
 export class AppEffects {
-  constructor(private actions$: Actions, private http: HttpClient) {}
+  constructor(private actions$: Actions) {}
   @Effect()
   loadName$: Observable<Action> = this.actions$.pipe(
     ofType(authAction.AuthActionTypes.LoadAuths),

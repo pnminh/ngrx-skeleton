@@ -56,3 +56,5 @@ ng generate action store/Auth --group
 ng generate reducer store/reducers/auth --reducers index.ts
 ```
 * store/reducers/auth: create auth reducer which is part of store/reducers, also provide reducers index.ts containing a state interface and an object map of action reducers 
+
+9. 

@@ -15,4 +15,4 @@ export class SetAuths implements Action {
     this.payload = name;
   }
 }
-export type AuthActions = LoadAuths;
+export type AuthActions = LoadAuths | SetAuths;
