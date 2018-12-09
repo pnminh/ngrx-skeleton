@@ -17,6 +17,6 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new fromRoot.LoadAuths());
     this.name$ = this.store.select(fromRoot.getNameFromAuth);
-    this.authRootState$ = this.store.select(fromRoot.authFeatureSelector);
+    this.authRootState$ = this.store.select(fromRoot.authFeatureState);
   }
 }

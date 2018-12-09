@@ -1,15 +1,18 @@
 import { StarShip } from '../../../models/star-ship.model';
 import { ShipsActions, ShipsActionTypes } from '../actions/ships.actions';
 
-export interface State {
+export interface ShipsState {
   allShips: StarShip[];
 }
 
-export const initialState: State = {
+export const initialState: ShipsState = {
   allShips: []
 };
 
-export function reducer(state = initialState, action: ShipsActions): State {
+export function reducer(
+  state = initialState,
+  action: ShipsActions
+): ShipsState {
   switch (action.type) {
     case ShipsActionTypes.LoadShips:
       return state;
@@ -19,4 +22,3 @@ export function reducer(state = initialState, action: ShipsActions): State {
       return state;
   }
 }
-export const getAllShips = (state: State) => state.allShips;

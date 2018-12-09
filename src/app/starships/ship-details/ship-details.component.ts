@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { StarShip } from '../../models/star-ship.model';
+import * as fromShipsStore from '../store/reducers';
 
 @Component({
   selector: 'app-ship-details',
@@ -6,10 +11,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ship-details.component.css']
 })
 export class ShipDetailsComponent implements OnInit {
-
-  constructor() { }
+  starShip$: Observable<StarShip>;
+  constructor(private store: Store<fromShipsStore.State>) {}
 
   ngOnInit() {
+    this.store.dispatch(new fromShipsStore.LoadShips());
+    this.starShip$ = this.store.select(fromShipsStore.getCurrentShip);
   }
-
 }
