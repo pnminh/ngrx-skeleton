@@ -50,3 +50,9 @@ ng generate action store/Auth --group
 ```
 * store/Auth: the Auth action that belongs to the store folder
 * --group: add all actions to *store/actions* folder, as opposed to adding to *store* if no flag
+
+8. Generate reducer:
+```
+ng generate reducer store/reducers/auth --reducers index.ts
+```
+* store/reducers/auth: create auth reducer which is part of store/reducers, also provide reducers index.ts containing a state interface and an object map of action reducers 
