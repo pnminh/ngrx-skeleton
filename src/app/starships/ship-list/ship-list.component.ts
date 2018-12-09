@@ -13,11 +13,13 @@ import { StarShip } from 'src/app/models/star-ship.model';
 export class ShipListComponent implements OnInit {
   starships$: Observable<StarShip[]>;
   name$: Observable<string>;
-  constructor(private store: Store<fromStore.State>) {}
+  constructor(private store: Store<fromStore.State>) {
+    console.log(`ShipListComponent is created`);
+  }
 
   ngOnInit() {
     this.store.dispatch(new fromStore.LoadShips());
     this.starships$ = this.store.select(fromStore.getAllShips);
-    this.name$ = this.store.select(fromRoot.getName);
+    this.name$ = this.store.select(fromRoot.getNameFromAuth);
   }
 }

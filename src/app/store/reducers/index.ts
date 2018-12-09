@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 import * as fromAuth from './auth.reducer';
 
 export interface State {
-  auth: fromAuth.State;
+  auth: fromAuth.AuthState;
 }
 
 export const reducers: ActionReducerMap<State> = {
@@ -20,8 +20,10 @@ export const metaReducers: MetaReducer<State>[] = !environment.production
   ? []
   : [];
 // the featureName must match the State name above
-export const authFeatureSelector = createFeatureSelector<fromAuth.State>(fromAuth.stateSelector);
-export const getName = createSelector(
+export const authFeatureSelector = createFeatureSelector<fromAuth.AuthState>(fromAuth.stateSelector);
+export const getNameFromAuth = createSelector(
   authFeatureSelector,
   fromAuth.getName
 );
+export * from '../actions/auth.actions';
+export * from './auth.reducer';

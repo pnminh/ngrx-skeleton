@@ -1,0 +1,6 @@
+<ng-container *ngIf="name$|async as name">
+  Hello {{name}}
+</ng-container>
+<div *ngIf="authRootState$|async as authRootState">
+  Hello state {{authRootState|json}}
+</div>

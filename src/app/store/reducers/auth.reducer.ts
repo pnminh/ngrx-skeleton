@@ -1,17 +1,17 @@
 import { Action } from '@ngrx/store';
 import * as fromAction from '../actions/auth.actions';
-export interface State {
+export interface AuthState {
   name: string;
 }
 export const stateSelector = 'auth';
-export const initialState: State = {
+export const initialState: AuthState = {
   name: null
 };
 
 export function reducer(
   state = initialState,
   action: fromAction.AuthActions
-): State {
+): AuthState {
   switch (action.type) {
     case fromAction.AuthActionTypes.SetAuths:
       return { ...state, name: action.payload };
@@ -21,4 +21,4 @@ export function reducer(
 }
 
 // add selector for each property of the state
-export const getName = (state: State) => state.name;
+export const getName = (state: AuthState) => state.name;

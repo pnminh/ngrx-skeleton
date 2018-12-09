@@ -1,3 +1,4 @@
+import { AppRouterModule } from './app-router.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ShipListComponent } from './starships/ship-list/ship-list.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,12 +13,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects/app.effects';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { StarshipsModule } from './starships/starships.module';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroListComponent],
+  declarations: [AppComponent, HeroListComponent, WelcomeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRouterModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
